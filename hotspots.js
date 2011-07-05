@@ -14,6 +14,7 @@ exports.hotspots = {
         imageURL: 'http://www.virtualcampustour.org/images/info.png',
         line2: "HR, Finance, Bursar's Office",
         line3: 'Mathematics, Computer Science',
+        line4: '',
         actions: [],
         type: 0
     },
@@ -26,6 +27,7 @@ exports.hotspots = {
         imageURL: 'http://www.virtualcampustour.org/images/info.png',
         line2: 'Media services',
         line3: '',
+        line4: '',
         actions: [],
         type: 0
     }
