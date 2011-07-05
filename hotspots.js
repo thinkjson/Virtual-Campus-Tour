@@ -11,7 +11,7 @@ exports.hotspots = {
         title: 'Elizabeth Hall',
         lat: 29.034981,
         lon: -81.303069,
-        imageURL: 'http://ctf.no.de/static/images/info.png',
+        imageURL: 'http://www.virtualcampustour.org/images/info.png',
         line2: "HR, Finance, Bursar's Office",
         line3: 'Mathematics, Computer Science',
         actions: [],
