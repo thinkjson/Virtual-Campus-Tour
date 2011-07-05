@@ -15,7 +15,7 @@ exports.API = {
         });
         
         var response = {
-            layer: "VirtualCampusTour",
+            layer: "virtualcampustour",
             errorCode: 0,
             errorString: '',
             hotspots: POI
