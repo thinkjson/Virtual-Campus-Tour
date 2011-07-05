@@ -51,7 +51,7 @@ exports.API = {
             var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
                     Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
             var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-            obj.distance = R * c;
+            obj.distance = R * c * 1000;
             
             // Put the latitude and longitude in a form Layar can read
             obj.lat *= 1000000;
@@ -65,7 +65,7 @@ exports.API = {
         
         // Remove hotspots that are not in range
         POI = _.select(POI, function(obj) {
-            return obj.distance < (user.radius / 1000);
+            return obj.distance < user.radius;
         });
         
         // Prepare the response
