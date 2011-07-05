@@ -30,5 +30,18 @@ exports.hotspots = {
         line4: '',
         actions: [],
         type: 0
+    },
+    
+    'devops': {
+        attribution: 'Where the Magic happens (TM)',
+        title: 'Development Operations',
+        lat: 29.034418557544075,
+        lon: -81.30106508731842,
+        imageURL: 'http://www.virtualcampustour.org/images/info.png',
+        line2: 'Development Operations',
+        line3: '',
+        line4: '',
+        actions: [],
+        type: 0
     }
 };
