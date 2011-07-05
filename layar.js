@@ -33,10 +33,14 @@ exports.API = {
         };
         
         // Log request
-        log.write(user);
+        log.write(JSON.stringify(user));
         
         // Calculate the distance to each POI
-        var POI = _.map(hotspots, function(obj, key) {
+        var POI = [];
+        _.each(hotspots, function(val, key) {
+            // Create a clone
+            var obj = _.clone(val);
+            
             // Calculate the distance using the Haversine formula
             var R = 6371;
             var dLat = (obj.lat-user.lat).toRad();
@@ -50,13 +54,13 @@ exports.API = {
             obj.distance = R * c;
             
             // Put the latitude and longitude in a form Layar can read
-            obj.lat = hotspots[key].lat * 1000000;
-            obj.lon = hotspots[key].lon * 1000000;
+            obj.lat *= 1000000;
+            obj.lon *= 1000000;
             
             // Attach the ID to the POI object for reference
             obj.id = key;
             
-            return obj;
+            POI.push(obj);
         });
         
         // Remove hotspots that are not in range

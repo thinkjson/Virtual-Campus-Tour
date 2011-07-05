@@ -1,3 +1,4 @@
+var http = require('http');
 var options = {
     host: 'logs.loggly.com',
     port: 80,
