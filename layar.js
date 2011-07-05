@@ -35,7 +35,8 @@ exports.API = {
         // Log request
         log.write(JSON.stringify({
             coordinates: user.lat + "," + user.lon,
-            radius: user.radius
+            radius: user.radius,
+            request: req.originalUrl
         }));
         
         // Calculate the distance to each POI
