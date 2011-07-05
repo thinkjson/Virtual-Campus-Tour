@@ -9,11 +9,23 @@ exports.hotspots = {
     'elizabeth_hall': {
         attribution: 'Administrative offices, Arts & Sciences',
         title: 'Elizabeth Hall',
-        lat: 29.034981,
-        lon: -81.303069,
+        lat: 29.034986077756262,
+        lon: -81.3030606508255,
         imageURL: 'http://www.virtualcampustour.org/images/info.png',
         line2: "HR, Finance, Bursar's Office",
         line3: 'Mathematics, Computer Science',
+        actions: [],
+        type: 0
+    },
+    
+    'library': {
+        attribution: 'The Library',
+        title: 'The DuPont-Ball Library',
+        lat: 29.03499076799295,
+        lon: -81.3021594285965,
+        imageURL: 'http://www.virtualcampustour.org/images/info.png',
+        line2: 'Media services',
+        line3: '',
         actions: [],
         type: 0
     }
