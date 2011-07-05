@@ -1,4 +1,5 @@
 var hotspots = require(__dirname + '/hotspots.js').hotspots;
+var log = require(__dirname + '/logging.js');
 var _ = require(__dirname + '/underscore.js');
 
 // Conversion to radians
@@ -27,8 +28,12 @@ exports.API = {
         var user = {
             lat: parseFloat(req.query.lat),
             lon: parseFloat(req.query.lon),
-            radius: parseInt(req.query.radius)
-        };        
+            radius: parseInt(req.query.radius),
+            timestamp: new Date() 
+        };
+        
+        // Log request
+        log.write(user);
         
         // Calculate the distance to each POI
         var POI = _.map(hotspots, function(obj, key) {
