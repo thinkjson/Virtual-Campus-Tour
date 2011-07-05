@@ -27,7 +27,7 @@ exports.API = {
         var user = {
             lat: parseFloat(req.query.lat),
             lon: parseFloat(req.query.lon),
-            radius: req.query.radius
+            radius: parseInt(req.query.radius)
         };        
         
         // Calculate the distance to each POI
@@ -45,8 +45,8 @@ exports.API = {
             obj.distance = R * c;
             
             // Put the latitude and longitude in a form Layar can read
-            obj.lat *= 1000000;
-            obj.lon *= 1000000;
+            obj.lat = hotspots[key].lat * 1000000;
+            obj.lon = hotspots[key].lon * 1000000;
             
             // Attach the ID to the POI object for reference
             obj.id = key;
@@ -55,8 +55,8 @@ exports.API = {
         });
         
         // Remove hotspots that are not in range
-        _.select(POI, function(obj) {
-            return obj.distance < user.radius;
+        POI = _.select(POI, function(obj) {
+            return obj.distance < (user.radius / 1000);
         });
         
         // Prepare the response
