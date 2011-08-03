@@ -56,7 +56,7 @@ exports.API = {
             var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
                     Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
             var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-            obj.distance = R * c * 1000;
+            obj.distance = parseInt(R * c * 1000, 10);
             
             // Put the latitude and longitude in a form Layar can read
             obj.lat = parseInt(obj.lat * 1000000, 10);
