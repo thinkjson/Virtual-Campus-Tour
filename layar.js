@@ -59,8 +59,8 @@ exports.API = {
             obj.distance = R * c * 1000;
             
             // Put the latitude and longitude in a form Layar can read
-            obj.lat *= 1000000;
-            obj.lon *= 1000000;
+            obj.lat = parseInt(obj.lat * 1000000, 10);
+            obj.lon = parseInt(obj.lon * 1000000, 10);
             
             // Attach the ID to the POI object for reference
             obj.id = key;
